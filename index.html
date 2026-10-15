@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Рисуй командой — 50 команд для ChatGPT · AI-Старт</title>
+  <meta name="description" content="Рисуй командой — интерактивная шпаргалка AI-Старт: 50 визуальных команд для ChatGPT. Примеры, полные промпты, конструктор и комбинации режимов.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#catalog">К командам</a>
+  <header class="top">
+    <a class="brand" href="#top">AI-<span>СТАРТ</span></a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#method">Как пользоваться</a>
+      <a href="#studio">Конструктор</a>
+      <a href="#catalog">Команды</a>
+      <a href="#quiz">Проверка</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="#lead">Забрать шпаргалку</a>
+  </header>
+
+  <main id="top">
+    <section class="hero-stage">
+      <div class="orb o1" aria-hidden="true"></div>
+      <div class="orb o2" aria-hidden="true"></div>
+      <div class="orb o3" aria-hidden="true"></div>
+      <svg class="arcs" viewBox="0 0 1200 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <ellipse cx="40" cy="640" rx="360" ry="130"></ellipse>
+        <ellipse cx="1180" cy="90" rx="280" ry="100"></ellipse>
+        <ellipse cx="1040" cy="620" rx="220" ry="70"></ellipse>
+      </svg>
+      <div class="wrap hero">
+        <div class="hero-copy">
+          <p class="kicker">AI-Старт · бесплатная шпаргалка</p>
+          <p class="magnet">Рисуй командой</p>
+          <h1>Хватит писать «нарисуй».<br><span>50 команд, после которых ChatGPT рисует точно.</span></h1>
+          <p class="lede">Короткая команда задаёт режим: конспект, схема, обложка, чертёж. У каждой есть пример и полный промпт — с форматом, языком и требованиями к тексту. Копируете и подставляете свою тему.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#catalog">Смотреть 50 команд</a>
+            <a class="btn btn-ghost" href="#studio">Собрать промпт</a>
+          </div>
+          <dl class="stats">
+            <div><dt>50</dt><dd>команд</dd></div>
+            <div><dt>10</dt><dd>сценариев</dd></div>
+            <div><dt>3</dt><dd>режима в комбо</dd></div>
+          </dl>
+        </div>
+        <div class="hero-visual">
+          <div class="logo-glow">
+            <img src="assets/logo.webp" width="800" height="620" alt="Логотип AI-Старт: белая буква A и красная орбита со сферами">
+          </div>
+          <p class="wordmark">AI-<span>СТАРТ</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="method">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker"><span>01</span> Как пользоваться</p>
+          <h2>Команда задаёт направление. Параметры делают результат точным.</h2>
+        </div>
+        <aside class="note">
+          <p>Команды вроде <code>/handwritten</code> — это условные названия визуальных режимов, а не универсальные встроенные функции ChatGPT. Чтобы получить предсказуемый результат, добавьте к команде описание желаемого оформления. Пример в карточке можно заменить своей темой — в конструкторе это уже собрано.</p>
+        </aside>
+        <div class="principles">
+          <article class="panel">
+            <p class="kicker">Приём 1</p>
+            <h3>Добавьте параметры</h3>
+            <p>Вместо короткой строки возьмите расширенный промпт. Ниже тот самый рабочий вариант для рукописного конспекта.</p>
+            <pre id="sample-hand">/handwritten Нейросети
+
+Создай подробный учебный конспект на русском языке в стиле рукописных заметок.
+
+Требования:
+
+• Формат изображения: 16:9.
+• Белый фон, имитация страницы тетради.
+• Заголовки выделены пастельными маркерами.
+• Добавь рисунки, стрелки и небольшие схемы.
+• Объясняй сложные понятия простыми словами.
+• Включи определения, примеры и основные выводы.
+• Текст должен быть крупным и читаемым.
+• Не допускай фактических и орфографических ошибок.</pre>
+            <button class="btn btn-primary" type="button" id="copy-sample">Скопировать пример</button>
+          </article>
+          <article class="panel">
+            <p class="kicker">Приём 2</p>
+            <h3>Соединяйте режимы</h3>
+            <p>Команды можно комбинировать. Например:</p>
+            <pre>/handwritten + /mindmap + /infographic</pre>
+            <p>Такой запрос подходит для визуального учебного конспекта, в котором одновременно есть интеллект-карта, иллюстрации и пояснения. Комбинации нескольких форматов дают более интересный материал, чем обычная картинка по одной теме.</p>
+            <button class="btn btn-ghost" type="button" id="combo-preset">Собрать эту комбинацию</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="studio">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker"><span>02</span> Конструктор</p>
+          <h2>Соберите промпт под свою тему</h2>
+          <p class="lede">Режим, тема и формат собираются в текст, который можно сразу вставить в ChatGPT.</p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Режим конструктора">
+          <button class="tab" id="tab-one" type="button" role="tab" aria-selected="true" aria-controls="panel-one">Одна команда</button>
+          <button class="tab" id="tab-combo" type="button" role="tab" aria-selected="false" aria-controls="panel-combo">Комбинация</button>
+        </div>
+        <div class="studio">
+          <div class="studio-controls">
+            <div id="panel-one" role="tabpanel">
+              <label class="field">Раздел
+                <select id="studio-cat"></select>
+              </label>
+              <label class="field">Команда
+                <select id="studio-cmd"></select>
+              </label>
+              <label class="field">Тема
+                <input id="studio-topic" type="text" autocomplete="off" placeholder="Например: Фотосинтез">
+              </label>
+            </div>
+            <div id="panel-combo" role="tabpanel" hidden>
+              <p class="hint">До трёх режимов. Снимите лишний, если нужен другой.</p>
+              <label class="field">Тема комбинации
+                <input id="combo-topic" type="text" autocomplete="off" value="Нейросети">
+              </label>
+              <div id="combo-list" class="combo-list"></div>
+            </div>
+            <fieldset class="field">
+              <legend>Формат</legend>
+              <div class="ratios" role="group" aria-label="Формат изображения">
+                <button type="button" data-ratio="16:9" aria-pressed="true">16:9</button>
+                <button type="button" data-ratio="1:1" aria-pressed="false">1:1</button>
+                <button type="button" data-ratio="4:5" aria-pressed="false">4:5</button>
+                <button type="button" data-ratio="9:16" aria-pressed="false">9:16</button>
+              </div>
+            </fieldset>
+            <fieldset class="checks">
+              <legend>Требования</legend>
+              <label><input id="flag-text" type="checkbox" checked> Крупный читаемый текст</label>
+              <label><input id="flag-errors" type="checkbox" checked> Без фактических и орфографических ошибок</label>
+              <label><input id="flag-examples" type="checkbox"> Определения, примеры и выводы</label>
+            </fieldset>
+          </div>
+          <div class="prompt-box">
+            <div class="prompt-top">
+              <span id="preview-kicker">/handwritten</span>
+              <button class="btn btn-primary btn-sm" type="button" id="copy-live">Скопировать</button>
+            </div>
+            <pre id="live-preview"></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="catalog">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker"><span>03</span> Каталог</p>
+          <h2>50 команд по задачам</h2>
+          <p class="lede">Копируйте короткую команду или полный промпт. Звезда оставляет режим в избранном — список хранится в этом браузере.</p>
+        </div>
+        <div class="toolbar">
+          <label class="search">
+            <span class="sr">Поиск команд</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 16l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <input id="search" type="search" placeholder="Поиск: конспект, свот, /reelscover" autocomplete="off">
+          </label>
+          <div class="toolbar-row">
+            <div id="chips" class="chips" role="group" aria-label="Разделы команд"></div>
+          </div>
+          <div class="toolbar-meta">
+            <p id="result-meta">Показано 50 из 50</p>
+            <div class="meta-actions">
+              <button class="btn btn-link" type="button" id="random-cmd">Случайная команда</button>
+              <button class="btn btn-link" type="button" id="copy-visible">Скопировать список</button>
+            </div>
+          </div>
+        </div>
+        <div id="empty" class="empty" hidden>
+          <p>Ничего не нашлось. Попробуйте «воронка», «конспект» или <code>/swot</code>.</p>
+          <button class="btn btn-ghost" type="button" id="reset-filters">Сбросить фильтр</button>
+        </div>
+        <div id="catalog-root"></div>
+      </div>
+    </section>
+
+    <section class="section" id="quiz">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker"><span>04</span> Проверка</p>
+          <h2>Какая команда сработает?</h2>
+          <p class="lede">Восемь рабочих ситуаций. Выберите режим — сразу будет видно, почему он подходит. Клавиши 1–4 тоже отвечают.</p>
+        </div>
+        <div class="quiz-card" id="quiz-root"></div>
+      </div>
+    </section>
+
+    <section class="section lead-sec" id="lead">
+      <div class="wrap">
+        <div class="lead-card">
+          <div class="orb o4" aria-hidden="true"></div>
+          <div class="lead-copy">
+            <p class="kicker"><span>05</span> Забрать с собой</p>
+            <h2>Шпаргалка одним файлом</h2>
+            <p>Все 50 команд, примеры и полные промпты. Файл удобно держать рядом с чатом и подставлять свою тему вместо примера.</p>
+            <ul>
+              <li>Короткая команда и расширенный промпт</li>
+              <li>Приём с параметрами и готовая комбинация</li>
+              <li>Текст на русском, без таблиц и лишней вёрстки</li>
+            </ul>
+          </div>
+          <form id="lead-form" novalidate>
+            <label class="field">Имя
+              <input id="lead-name" name="name" type="text" autocomplete="name" required placeholder="Как к вам обращаться">
+            </label>
+            <p class="err" id="err-name" hidden>Напишите имя — хотя бы два символа.</p>
+            <label class="field">Telegram или почта
+              <input id="lead-contact" name="contact" type="text" autocomplete="email" required placeholder="@username или почта">
+            </label>
+            <p class="err" id="err-contact" hidden>Нужен Telegram (@username), телефон или почта.</p>
+            <button class="btn btn-primary" type="submit">Скачать 50 команд</button>
+            <p class="fine">Файл скачается сразу на устройство. Имя и контакт запоминаются в этом браузере, чтобы шпаргалку можно было скачать ещё раз.</p>
+          </form>
+          <div id="lead-success" hidden>
+            <p class="magnet" id="lead-hello">Шпаргалка собрана.</p>
+            <p>Если загрузка не началась, скопируйте текст или скачайте файл ещё раз. Разборы таких команд — в AI-Старт.</p>
+            <div class="hero-actions">
+              <button class="btn btn-primary" type="button" id="lead-again">Скачать ещё раз</button>
+              <button class="btn btn-ghost" type="button" id="copy-pack">Скопировать текст</button>
+              <a class="btn btn-ghost" data-link="telegram" href="https://t.me/AI_Start_Course" target="_blank" rel="noopener">Telegram AI-Старт</a>
+            </div>
+            <details>
+              <summary>Показать текст шпаргалки</summary>
+              <pre id="lead-text"></pre>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="wordmark sm">AI-<span>СТАРТ</span></p>
+      <div class="soc-row">
+        <a data-link="instagram" href="https://instagram.com/AI_Start_Course" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
+          @AI_Start_Course
+        </a>
+        <span class="sep" aria-hidden="true"></span>
+        <a data-link="telegram" href="https://t.me/AI_Start_Course" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.8 4.4 3.2 11.1c-.9.3-.9 1.1-.2 1.4l4.5 1.4 10.4-6.6c.4-.3.8-.1.5.2l-8.4 7.6-.3 4.4c.5 0 .7-.2 1-.5l2.3-2.2 4.6 3.4c.8.4 1.4.2 1.6-.8l2.9-14.2c.3-1.3-.5-1.9-1.8-1.4z"/></svg>
+          @AI_Start_Course
+        </a>
+        <span class="sep" aria-hidden="true"></span>
+        <a data-link="tiktok" href="https://www.tiktok.com/@AI_Start_Course" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 4c.4 2.4 1.8 4 4.2 4.2v2.4c-1.5 0-2.8-.5-4-1.3v6.4c0 3.3-2.5 5.6-5.7 5.6S3 18.9 3 15.7c0-3.2 2.4-5.5 5.6-5.6v2.5c-1.6.1-2.8 1.3-2.8 3.1 0 1.8 1.3 3.1 3.1 3.1s3-.1 3-3.2V4H14z"/></svg>
+          @AI_Start_Course
+        </a>
+      </div>
+      <p class="fine">Шпаргалка «Рисуй командой». Режимы вроде /handwritten — это названия оформления, а не скрытые кнопки ChatGPT.</p>
+    </div>
+  </footer>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript>
+    <p class="noscript">Чтобы пользоваться каталогом и конструктором, включите JavaScript.</p>
+  </noscript>
+  <script src="js/data.js"></script>
+  <script src="js/prompt.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
