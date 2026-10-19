@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Рисуй командой — 50 команд для ChatGPT · AI-Старт</title>
-  <meta name="description" content="Рисуй командой — интерактивная шпаргалка AI-Старт: 50 визуальных команд для ChatGPT. Примеры, полные промпты, конструктор и комбинации режимов.">
+  <title>Рисуй командой — 251 команда для ChatGPT · AI-Старт</title>
+  <meta name="description" content="Рисуй командой — интерактивная шпаргалка AI-Старт: 251 команда для ChatGPT. Примеры, полные промпты, конструктор и комбинации режимов.">
   <meta name="theme-color" content="#000000">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,15 +39,15 @@
         <div class="hero-copy">
           <p class="kicker">AI-Старт · бесплатная шпаргалка</p>
           <p class="magnet">Рисуй командой</p>
-          <h1>Хватит писать «нарисуй».<br><span>50 команд, после которых ChatGPT рисует точно.</span></h1>
+          <h1>Хватит писать «нарисуй».<br><span>251 команд, после которых ChatGPT рисует точно.</span></h1>
           <p class="lede">Короткая команда задаёт режим: конспект, схема, обложка, чертёж. У каждой есть пример и полный промпт — с форматом, языком и требованиями к тексту. Копируете и подставляете свою тему.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#catalog">Смотреть 50 команд</a>
+            <a class="btn btn-primary" href="#catalog">Смотреть 251 команду</a>
             <a class="btn btn-ghost" href="#studio">Собрать промпт</a>
           </div>
           <dl class="stats">
-            <div><dt>50</dt><dd>команд</dd></div>
-            <div><dt>10</dt><dd>сценариев</dd></div>
+            <div><dt>251</dt><dd>команда</dd></div>
+            <div><dt>51</dt><dd>сценарий</dd></div>
             <div><dt>3</dt><dd>режима в комбо</dd></div>
           </dl>
         </div>
@@ -133,7 +133,7 @@
               </label>
               <div id="combo-list" class="combo-list"></div>
             </div>
-            <fieldset class="field">
+            <fieldset class="field" id="format-field">
               <legend>Формат</legend>
               <div class="ratios" role="group" aria-label="Формат изображения">
                 <button type="button" data-ratio="16:9" aria-pressed="true">16:9</button>
@@ -164,7 +164,7 @@
       <div class="wrap">
         <div class="section-head">
           <p class="kicker"><span>03</span> Каталог</p>
-          <h2>50 команд по задачам</h2>
+          <h2>251 команда по задачам</h2>
           <p class="lede">Копируйте короткую команду или полный промпт. Звезда оставляет режим в избранном — список хранится в этом браузере.</p>
         </div>
         <div class="toolbar">
@@ -177,7 +177,7 @@
             <div id="chips" class="chips" role="group" aria-label="Разделы команд"></div>
           </div>
           <div class="toolbar-meta">
-            <p id="result-meta">Показано 50 из 50</p>
+            <p id="result-meta">Показано 251 из 251</p>
             <div class="meta-actions">
               <button class="btn btn-link" type="button" id="random-cmd">Случайная команда</button>
               <button class="btn btn-link" type="button" id="copy-visible">Скопировать список</button>
@@ -210,7 +210,7 @@
           <div class="lead-copy">
             <p class="kicker"><span>05</span> Забрать с собой</p>
             <h2>Шпаргалка одним файлом</h2>
-            <p>Все 50 команд, примеры и полные промпты. Файл удобно держать рядом с чатом и подставлять свою тему вместо примера.</p>
+            <p>251 команда, примеры и полные промпты. Файл удобно держать рядом с чатом и подставлять свою тему вместо примера.</p>
             <ul>
               <li>Короткая команда и расширенный промпт</li>
               <li>Приём с параметрами и готовая комбинация</li>
@@ -226,7 +226,7 @@
               <input id="lead-contact" name="contact" type="text" autocomplete="email" required placeholder="@username или почта">
             </label>
             <p class="err" id="err-contact" hidden>Нужен Telegram (@username), телефон или почта.</p>
-            <button class="btn btn-primary" type="submit">Скачать 50 команд</button>
+            <button class="btn btn-primary" type="submit">Скачать 251 команду</button>
             <p class="fine">Файл скачается сразу на устройство. Имя и контакт запоминаются в этом браузере, чтобы шпаргалку можно было скачать ещё раз.</p>
           </form>
           <div id="lead-success" hidden>
@@ -275,6 +275,7 @@
     <p class="noscript">Чтобы пользоваться каталогом и конструктором, включите JavaScript.</p>
   </noscript>
   <script src="js/data.js"></script>
+  <script src="js/more-commands.js"></script>
   <script src="js/prompt.js"></script>
   <script src="js/app.js"></script>
 </body>

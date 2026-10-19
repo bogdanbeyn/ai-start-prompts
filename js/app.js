@@ -132,7 +132,7 @@ function syncHeader() {
 }
 
 function renderChips() {
-  var html = '<button class="chip" type="button" data-cat="all" aria-pressed="true">Все 50</button>';
+  var html = '<button class="chip" type="button" data-cat="all" aria-pressed="true">Все ' + COMMANDS.length + "</button>";
   html += '<button class="chip" type="button" data-cat="fav" aria-pressed="false">Избранное <span id="fav-count">0</span></button>';
   CATEGORIES.forEach(function (cat) {
     html += '<button class="chip" type="button" data-cat="' + cat.id + '" aria-pressed="false">' + esc(cat.chip) + "</button>";
@@ -226,6 +226,20 @@ function applyCommandDefaults(cmd, force) {
   topic.placeholder = "Например: " + cmd.example;
 }
 
+function syncFormat() {
+  var format = document.getElementById("format-field");
+  if (!format) return;
+  var visual = true;
+  if (state.tab === "combo") {
+    var list = state.combo.map(findCommand).filter(Boolean);
+    visual = !list.length || list.some(function (c) { return c.visual !== false; });
+  } else {
+    var cmd = findCommand(state.cmdId);
+    visual = !cmd || cmd.visual !== false;
+  }
+  format.hidden = !visual;
+}
+
 function updatePreview() {
   var cmd = findCommand(state.cmdId);
   var flags = currentFlags();
@@ -234,6 +248,7 @@ function updatePreview() {
     ? comboText()
     : buildPrompt(cmd, topic, state.ratio, flags);
   document.getElementById("live-preview").textContent = text || "Выберите хотя бы одну команду.";
+  syncFormat();
   var label = document.getElementById("preview-kicker");
   if (state.tab === "combo") {
     var picked = state.combo.map(findCommand).filter(Boolean);
@@ -293,7 +308,7 @@ function filterCatalog() {
     shown += visible;
   });
   var meta = document.getElementById("result-meta");
-  meta.textContent = shown ? "Показано " + shown + " из 50" : "Ничего не нашлось";
+  meta.textContent = shown ? "Показано " + shown + " из " + COMMANDS.length : "Ничего не нашлось";
   document.getElementById("empty").hidden = shown !== 0;
 }
 
@@ -331,7 +346,7 @@ function quizResultHtml() {
   var total = QUIZ.length;
   var title = "База уже есть. Откройте режимы, которые не узнались с первого раза.";
   if (state.quizScore === total) title = "Вы уже думаете режимами, а не просьбой «нарисуй».";
-  else if (state.quizScore < 5) title = "Команды новые — для этого и нужна шпаргалка. Не обязательно держать все 50 в голове.";
+  else if (state.quizScore < 5) title = "Команды новые — для этого и нужна шпаргалка. Не обязательно держать все " + COMMANDS.length + " в голове.";
   var html = '<p class="score"><b>' + state.quizScore + "</b><span>из " + total + "</span></p>";
   html += "<h3>" + esc(title) + "</h3>";
   if (state.quizMissed.length) {
@@ -407,7 +422,7 @@ function downloadPack(name, contact) {
   var url = URL.createObjectURL(blob);
   var link = document.createElement("a");
   link.href = url;
-  link.download = "Рисуй-командой-50-команд-ChatGPT.txt";
+  link.download = "Рисуй-командой-" + COMMANDS.length + "-команд-ChatGPT.txt";
   document.body.appendChild(link);
   link.click();
   link.remove();

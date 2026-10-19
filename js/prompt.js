@@ -6,7 +6,7 @@ function buildPrompt(cmd, topic, ratio, flags) {
   lines.push("");
   lines.push("Требования:");
   lines.push("");
-  lines.push("• Формат изображения: " + ratio + ".");
+  if (cmd.visual !== false) lines.push("• Формат изображения: " + ratio + ".");
   cmd.look.forEach(function (line) {
     lines.push("• " + line);
   });
@@ -25,9 +25,12 @@ function buildPrompt(cmd, topic, ratio, flags) {
 function buildCombo(list, topic, ratio, flags) {
   if (!list.length) return "";
   var lines = [];
+  var visual = list.some(function (c) { return c.visual !== false; });
   lines.push(list.map(function (c) { return c.cmd; }).join(" + ") + " " + topic);
   lines.push("");
-  lines.push("Создай один цельный визуальный материал на русском языке. Совмести форматы в одной работе, а не отдельными картинками.");
+  lines.push(visual
+    ? "Создай один цельный визуальный материал на русском языке. Совмести форматы в одной работе, а не отдельными картинками."
+    : "Сделай один цельный ответ на русском языке. Совмести выбранные режимы в одной работе, а не отдельными несвязанными текстами.");
   lines.push("");
   list.forEach(function (c, i) {
     lines.push((i + 1) + ". " + c.cmd + " — " + c.title + ". " + c.desc);
@@ -37,7 +40,7 @@ function buildCombo(list, topic, ratio, flags) {
   lines.push("");
   lines.push("Требования:");
   lines.push("");
-  lines.push("• Формат изображения: " + ratio + ".");
+  if (visual) lines.push("• Формат изображения: " + ratio + ".");
   if (flags.bigText) lines.push("• Текст должен быть крупным и читаемым.");
   if (flags.examples) lines.push("• Включи определения, примеры и основные выводы.");
   if (flags.noErrors) lines.push("• Не допускай фактических и орфографических ошибок.");
@@ -52,7 +55,7 @@ function shortCommand(cmd, topic) {
 function buildPack(name, contact) {
   var lines = [];
   lines.push("РИСУЙ КОМАНДОЙ");
-  lines.push("50 визуальных команд для ChatGPT");
+  lines.push(COMMANDS.length + " команд для ChatGPT");
   lines.push("AI-Старт · @AI_Start_Course");
   lines.push("");
   if (name) lines.push("Для: " + name);
